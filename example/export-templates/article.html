@@ -1,0 +1,83 @@
+{% include 'header.html' %}
+    <main role="main">
+        <div class="container-divider"></div>
+        <div class="container">
+            <nav class="sub-nav">
+                <ol class="breadcrumbs">
+
+                    <li title="Here One™ - Support">
+
+                        <a href="/hc/en-us">Here One™ - Support</a>
+
+                    </li>
+
+                    <li title="{{category.name}}">
+
+                        <a href="{{category.html_url|relative_url}}">{{category.name}}</a>
+
+                    </li>
+
+                    <li title="{{my_section.name}}">
+
+                        <a href="{{my_section.html_url|relative_url}}">{{my_section.name}}</a>
+
+                    </li>
+
+                </ol>
+
+            </nav>
+
+            <div class="article-container" id="article-container">
+                <ul id="section-nav">
+                  {% for section in sections %}
+                    <li>
+                      {% if my_section.name == section.name %}
+                      <a href="{{ section.html_url|relative_url }}", class="sidenav-item current-article">{{ section.name }}</a>
+                      {% else %}
+                      <a href="{{ section.html_url|relative_url }}", class="sidenav-item">{{ section.name }}</a>
+                      {% endif %}
+                    </li>
+                  {% endfor %}
+                </ul>
+
+                <article class="article">
+                    <header class="article-header">
+                        <h1 title="{{ name }}" class="article-title">
+          {{ name }}
+
+        </h1>
+
+                    </header>
+
+                    <section class="article-info">
+                        <div class="article-content">
+                            <div class="article-body">
+                                {{ body|safe }}
+                            </div>
+
+                            <div class="article-attachments">
+                                <ul class="attachments">
+
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+
+                    <footer>
+                        <div class="article-footer">
+                        </div>
+
+                        <div class="article-return-to-top">
+                            <a href="#article-container">Return to top<span class="icon-arrow-up"></span></a>
+                        </div>
+                    </footer>
+
+                    <section class="article-relatives">
+                        <div data-recent-articles></div>
+
+                    </section>
+
+                </article>
+            </div>
+        </div>
+        {% include 'footer.html' %}

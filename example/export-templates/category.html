@@ -1,0 +1,75 @@
+{% include 'header.html' %}
+    <main role="main">
+        <div class="container-divider"></div>
+        <div class="container">
+            <nav class="sub-nav">
+                <ol class="breadcrumbs">
+
+                    <li title="Here One™ - Support">
+
+                        <a href="/hc/en-us">Here One™ - Support</a>
+
+                    </li>
+
+                    <li title="{{name}}">
+
+                        {{ name }}
+
+                    </li>
+
+                </ol>
+
+            </nav>
+
+<div class="category-container">
+    <section class="article-sidebar">
+      <section class="section-articles collapsible-sidebar">
+        <h3 class="collapsible-sidebar-title sidenav-title">Topics</h3>
+        <ul>
+        {% for section in sections %}
+            <li>
+              <a href="{{ section.html_url|relative_url }}", class="sidenav-item xcurrent-article">{{ section.name }}</a>
+            </li>
+        {% endfor %}
+
+        </ul>
+
+      </section>
+    </section>
+         <div class="category-content">
+      <header class="page-header">
+        <h1>{{ name }}</h1>
+
+
+      </header>
+
+      <div class="section-tree">
+
+        {% for section in sections %}
+          <section class="section">
+            <h3 class="section-tree-title">
+              <a href="{{section.html_url|relative_url}}">{{ section.name }}</a>
+            </h3>
+            <ul class="article-list">
+            {% for article in section.articles[0:6] %}
+
+                <li class="article-list-item">
+                    <a href="{{ article.html_url|relative_url }}" class="article-list-link"> {{ article.name }} </a>
+                </li>
+
+            {% endfor %}
+            </ul>
+            {% if section.articles|length > 6 %}
+
+            <a href="{{section.html_url|relative_url}}" class="see-all-articles">
+              See all {{section.articles|length }} articles
+            </a>
+
+            {% endif %}
+          </section>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+        {% include 'footer.html' %}

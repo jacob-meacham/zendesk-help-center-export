@@ -1,0 +1,50 @@
+    <section class="section footer-request">
+            <p id="hal-more">Need support for Here Active Listening? <a href="https://support.hereplus.me/hc/en-us/categories/203052988-Here-Active-Listening">Click here.</a></p>
+            <p id="ho-more">Need support for Here One? <a href="/">Click here.</a></p>
+        </section>
+        <script>
+            jQuery(document).ready(function() {
+                if (!jQuery('.breadcrumbs').html().includes('Active Listening')) {
+                    jQuery('#ho-more').removeClass('shown');
+                    jQuery('#hal-more').addClass('shown');
+                } else {
+                    jQuery('#ho-more').addClass('shown');
+                    jQuery('#hal-more').removeClass('shown');
+                }
+            });
+        </script>
+
+    </main>
+
+    <footer class="footer">
+        <div class="footer-inner">
+            <div class="footer-contain">
+                <div class="footer-logo">
+                    <svg viewBox="0 0 72.66 45">
+                        <defs>
+                            <clipPath id="a" transform="translate(14.88 52.75)">
+                                <path class="a" d="M35.28-47.75c-12.2,0-16,11.29-22,11.29-4.12,0-6.16-4.65-12.35-4.65A10.86,10.86,0,0,0-9.87-30.25,10.86,10.86,0,0,0,1-19.39C7.17-19.39,9.21-24,13.33-24c6,0,9.8,11.29,22,11.29a17.52,17.52,0,0,0,17.5-17.5,17.52,17.52,0,0,0-17.5-17.5"></path>
+                            </clipPath>
+                            <clipPath id="b" transform="translate(14.88 52.75)">
+                                <rect class="b" x="-97.88" y="-103.75" width="1600" height="6853"></rect>
+                            </clipPath>
+                        </defs>
+                        <title>here-mark</title>
+                        <g class="c">
+                            <g class="d">
+                                <rect class="e" width="72.66" height="45"></rect>
+                            </g>
+                        </g>
+                    </svg>
+                </div>
+                <div class="footer-nav">
+
+                </div>
+                <div class="footer-connected">
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

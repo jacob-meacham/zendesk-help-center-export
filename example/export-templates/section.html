@@ -1,0 +1,68 @@
+{% include 'header.html' %}
+    <main role="main">
+        <div class="container-divider"></div>
+        <div class="container">
+            <nav class="sub-nav">
+                <ol class="breadcrumbs">
+
+                    <li title="Here One™ - Support">
+
+                        <a href="/hc/en-us">Here One™ - Support</a>
+
+                    </li>
+
+                    <li title="{{category.name}}">
+
+                        <a href="{{category.html_url|relative_url}}">{{category.name}}</a>
+
+                    </li>
+
+                    <li title="{{name}}">
+
+                        {{name}}
+
+                    </li>
+
+                </ol>
+            </nav>
+
+            <div class="section-container">
+                <section class="article-sidebar">
+                    <section class="section-articles collapsible-sidebar">
+                        <h3 class="collapsible-sidebar-title sidenav-title">Topics</h3>
+                        <ul id="section-nav">
+                          {% for section in sections %}
+                            <li>
+                              {% if name == section.name %}
+                              <a href="{{ section.html_url|relative_url }}", class="sidenav-item current-article">{{ section.name }}</a>
+                              {% else %}
+                              <a href="{{ section.html_url|relative_url }}", class="sidenav-item">{{ section.name }}</a>
+                              {% endif %}
+                            </li>
+                          {% endfor %}
+                        </ul>
+
+                    </section>
+                </section>
+                <section class="section-content">
+                    <header class="page-header">
+                        <h1>
+          {{name}}
+
+        </h1>
+                    </header>
+
+                    <ul class="article-list">
+
+                        {% for article in articles %}
+                        <li class="article-list-item ">
+
+                            <a href="{{article.html_url|relative_url}}" class="article-list-link">{{article.name}}</a>
+                        </li>
+                        {% endfor %}
+                    </ul>
+
+                </section>
+            </div>
+        </div>
+        {% include 'footer.html' %}
