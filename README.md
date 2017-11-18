@@ -58,6 +58,6 @@ optional arguments:
 Currently, this script only downloads the en-us locale. In addition, it doesn't download any article attachments, css, js, or fonts - you'll need to download all of those yourself. Zendesk allows links to either be the bare id (eg /hc/en-us/articles/1234) or the id and a name slug (eg /hc/en-us/articles/1234-my-name-here-). This export only supports the latter type of link, so you'll need to fix up any links that look like the former.
 
 ## Todo
-[] Support locales
-[] Support article attachments
-[] Support URL rewriting
+- [ ] Support locales
+- [ ] Support article attachments
+- [ ] Support URL rewriting
