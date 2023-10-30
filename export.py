@@ -7,8 +7,8 @@ import jinja2
 import requests
 import yaml
 
-credentials = 'your_zendesk_email', 'your_zendesk_password'
-zendesk = 'https://your_subdomain.zendesk.com'
+credentials = 'joyce.andrade@esportesdasorte.com', 'Ilma_092649@'
+zendesk = 'https://edscap.zendesk.com'
 language = 'some_locale'
 
 
